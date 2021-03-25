@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title class="title">Depression Detection</title>
+    <link rel = "icon" href ="templates/logo.jpg" type = "image/x-icon">
+</head>
+<body>
+    <!-- Sidebar -->
+    <div class="sidenav">
+        <a href="https://www.psychiatry.org/patients-families/depression/what-is-depression">Depression?</a>
+        <a href="https://psychcentral.com/quizzes/depression-quiz">Test Yourself</a>
+        <a href="https://www.webmd.com/depression/features/natural-treatments">Treatment</a>
+        <a href="https://www.vandrevalafoundation.com/">Help!</a>
+    </div>
+
+    <div style="color:#ffffcc">
+        <form action="{{ url_for('predict')}}" method="post">
+
+            <h2>Depression Detection</h2>
+            <p>
+                This Project helps you to find your mental health<br>
+                i.e, whether you are Depressed or Not Depressed.<br>
+            <br>------------------------------------------------<br>
+            Result:<br>
+                If you are Depressed, it will show you-- 1<br>
+                If you are Not Depressed, it will show you-- 0<br>
+            </p>
+            <h3>Enter Your Message</h3>
+            <textarea cols="50" rows="10" type="text" name="mood_pred"></textarea>
+            <br><br><button class="button" type="submit ">Emotion Check</button>
+        </form>
+        <br><br><h3>{{ pred }}<h3>
+    </div>
+    <footer>
+        <p>© 2021 Depression Detection</p>
+        <p><a href="mailto:rahulsharma.rks31@gmail.com">rahulsharma.rks31@gmail.com</a></p>
+    </footer>
+    <style>
+        .title{
+            color: black;
+            padding: 15px 32px;
+            text-align: center;
+            font-size: 16px;
+        }
+        .txt{
+            width: 200px;
+            height: 125px;
+            border: 2px solid black;
+        }
+        body {
+            background-color: #002633;
+            text-align: center;
+            padding: 0px;
+        }
+        h2 {
+            color: ;
+            text-align: center;
+        }
+
+        p {
+            font-family: "Times New Roman", Times, serif;
+            font-size: 20px;
+        }
+        .button{
+            background-color: #008CBA;
+            border: none;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            border-radius: 4px;
+            border: 2px solid #000000;
+            transition-duration: 0.4s;
+        }
+        .button:hover {
+            background-color: #002233;
+            color: white;
+        }
+        .sidenav {
+
+            height: 100%; 
+            width: 200px; 
+            position: fixed; 
+            z-index: 1; 
+            top: 0; 
+            left: 0;
+            background-color: #027177; 
+            overflow-x: hidden; 
+            padding-top: 30px;
+        }
+        .sidenav a {
+            padding: 6px 8px 6px 15px;
+            text-decoration: none;
+            font-size: 25px;
+            color: #111;
+            display: block;
+        }
+        .sidenav a:hover {
+            color: #f1f1f1;
+        }
+        footer {
+            text-align: center;
+            padding: 3px;
+            color: white;
+
+        }
+        
+    </style>
+</body>
+</html>
